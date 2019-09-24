@@ -8,7 +8,7 @@ Deze applicatie biedt naast een demo ook een eenvoudig overzicht van de geïmple
 
 Om de applicatie via Docker te laten draaien, moet er eerst een image aangemaakt worden. Navigeer daarvoor eerst naar de map waar de `Dockerfile` staat. Omdat deze applicatie private npm packages van @govflanders bevat, moet er eerst een npm token aangemaakt worden. Eenmaal er een token is aangemaakt, kan de docker image gemaakt worden met volgend commando:
 ```
-docker build --build-arg NPM_TOKEN=XXX -t gha_demo  # Vervang XXX door je eigen npm token
+docker build --build-arg NPM_TOKEN=XXX -t gha_demo .  # Vervang XXX door je eigen npm token
 ```
 Vervolgens kan de image gestart worden via:
 ```
