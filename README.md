@@ -27,4 +27,8 @@ De applicatie draait op poort **3000**.
 
 ## Demo
 
-TODO
+De gebruiker moet een URL opgeven en vervolgens de bouwblok kiezen die hij wil gebruiken. De reeds beschikbare bouwblokken op dit moment zijn Paginering, CRUD-operaties een Taal-selectie/ontdekking. Er is ook een [testserver](https://github.com/Informatievlaanderen/generic-hypermedia-api-client-testserver) geconfigureerd. Door op de knop `Gebruik test URL` te klikken, wordt automatisch de URL van de testserver ingevuld.
+
+Let op! De test URL wordt gekozen op basis van de bouwblok die op dat moment geselecteerd is. Indien Paginering geselecteerd op is het moment dat je kiest voor de test URL, dan wordt de URL voor paginering ingevuld. Als je daarna een andere bouwblok selecteert, moet je ook opnieuw op de knop `Gebruik test URL` klikken om de test URL te gebruiken, die hoort bij de geselecteerde bouwblok.
+
+Na het klikken op de knop `Execute` wordt de demo uitgevoerd. Het resultaat wordt getoond in het veld onderaan.
