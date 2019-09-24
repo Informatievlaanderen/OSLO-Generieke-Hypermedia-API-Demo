@@ -1,12 +1,13 @@
 {
-  "name": "test",
+  "name": "Demo OSLO Generieke Hypermedia API",
   "version": "1.0.0",
-  "description": "",
+  "description": "Deze applicatie is een demo voor de OSLO Generieke Hypermedia API",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-css": "node-sass --include-path node_modules/@govflanders/ --include-path scss src/scss/style.scss  src/css/style.css"
   },
+  "repository" : "https://github.com/Informatievlaanderen/OSLO-Generieke-Hypermedia-API-Demo",
   "author": "Dwight Van Lancker - Agentschap Informatie Vlaanderen",
   "license": "ISC",
   "devDependencies": {
