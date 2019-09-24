@@ -1,0 +1,46 @@
+// Core
+@import "vl-ui-core/src/scss/core";
+
+// Components
+
+@import "vl-ui-content-header/src/scss/content-header";
+@import "vl-ui-titles/src/scss/titles";
+@import "vl-ui-introduction/src/scss/introduction";
+
+
+@import "vl-ui-input-field/src/scss/input-field";
+@import "vl-ui-button/src/scss/button";
+@import "vl-ui-select/src/scss/select";
+@import "vl-ui-textarea/src/scss/textarea";
+
+@import "vl-ui-side-navigation/src/scss/side-navigation";
+@import "vl-ui-info-tile/src/scss/info-tile";
+@import "vl-ui-form-message/src/scss/form-message";
+@import "vl-ui-typography/src/scss/typography";
+
+
+// Utilities
+@import "vl-ui-util/src/scss/util";
+
+textarea {
+  resize: none;
+}
+
+#result_area {
+  height: 350px;
+  border: 1px solid #8f8f8f;
+  background-color: #e8ebee;
+  overflow: auto;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #0055cc;
+}
