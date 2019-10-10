@@ -89,6 +89,8 @@ function getPaginationControls(){
            },
            subjectStream: client.subjectStream
         });
+        console.log("URL: " + URL);
+        console.log(typeof URL);
         //client.fetch("http://beta.metadata.vlaanderen.be/srv/api/0.1/records?from=1&hitsPerPage=10&facet.q=sourceCatalog%2F006f665b-339b-44ac-88ff-c892437221a3",[paginationHandler]);
         client.fetch(URL,[paginationHandler]);
     });

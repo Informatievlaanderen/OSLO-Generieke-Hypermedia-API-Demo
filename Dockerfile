@@ -17,6 +17,7 @@ RUN rm -f .npmrc
 
 # Bundle app source
 COPY . .
+RUN npm run-script build
 
 EXPOSE 3000
 CMD [ "node", "app.js"]
