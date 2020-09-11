@@ -7,7 +7,11 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@govflanders/vl-ui-core": "^4.0.8",
+    "@govflanders/vl-ui-vue-components": "^4.0.7",
     "core-js": "^3.6.5",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^10.0.2",
     "vue": "^2.6.11"
   },
   "devDependencies": {
