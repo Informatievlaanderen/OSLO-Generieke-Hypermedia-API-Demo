@@ -29,6 +29,13 @@
                     </option>
                 </vl-select>
             </vl-column>
+            <vl-column v-if="noBuildingBlockError">
+                <vl-alert  icon="alert-circle"
+                           mod-error
+                           title="Fout bij uitvoeren van de demo">
+                    Er werd geen bouwblok geselecteerd. Gelieve een bouwblok te selecteren
+                </vl-alert>
+            </vl-column>
             <vl-column width="6">
                 <vl-button @click="execute">Demo!</vl-button>
             </vl-column>
@@ -43,7 +50,10 @@
             </vl-column>
             <vl-column/>
             <vl-column width="6" v-if="resultIsReady">
-                <vl-textarea rows="15" id="textarea" v-model="resultText" mod-disabled mod-block></vl-textarea>
+                <!--<vl-textarea rows="15" id="textarea" v-model="resultText" mod-disabled mod-block></vl-textarea>-->
+                <div id="result-area">
+                    <pre v-html="result"></pre>
+                </div>
             </vl-column>
         </vl-grid>
     </div>
@@ -56,38 +66,44 @@
         data() {
             return {
                 buildingBlock: '',
-                resultText: '',
+                noBuildingBlockError: false,
+                result: '',
                 URL: '',
                 noURLError: false,
                 acceptLanguageHeader: '',
                 noAcceptLanguageHeader: false,
                 showInfoMessage: false,
-                resultIsReady: false
+                resultIsReady: false,
             }
         },
         methods: {
             async execute(){
                 this.noURLError = this.URL === '';
+                this.noBuildingBlockError = this.buildingBlock === ''
 
-                if(!(this.noURLError = this.URL === '')){
+                if(!this.noURLError && !this.noBuildingBlockError){
+
                     let controls;
 
                     if(this.buildingBlock === 'language' && (this.noAcceptLanguageHeader = this.acceptLanguageHeader === '')){
                         return;
                     }
 
-                    // When pagination or crud is selected, this.acceptLanguageHeader will be empty, but that's not a problem
-                    controls = await new Promise(resolve => {
-                        const client = new ApiClient(null);
-                        const handler = this.setHandler(client, resolve, this.acceptLanguageHeader);
-                        client.fetch(this.URL, [handler])
-                    });
+                    try {
+                        // When pagination or crud is selected, this.acceptLanguageHeader will be empty, but that's not a problem
+                        controls = await new Promise(resolve => {
+                            const client = new ApiClient(null);
+                            const handler = this.setHandler(client, resolve, this.acceptLanguageHeader);
+                            client.fetch(this.URL, [handler])
+                        });
 
-                    //TODO: just showing plain link
-                    //this.addClickableURLs(controls);
+                        this.addClickableURLs(controls);
 
-                    this.resultText = JSON.stringify(controls, null, 4).replaceAll(/\\"/g, '"')
-                    this.resultIsReady = true;
+                        this.result = JSON.stringify(controls, null, 4).replaceAll(/\\"/g, '"')
+                        this.resultIsReady = true;
+                    } catch (e) {
+
+                    }
                 }
             },
             selectChange(){
@@ -155,6 +171,9 @@
         watch: {
             URL: function(){
                 this.noURLError = this.URL === '';
+            },
+            buildingBlock(){
+                this.noBuildingBlockError = this.buildingBlock === '';
             }
         }
     }
@@ -171,5 +190,12 @@
 
     #textarea {
         resize: none;
+    }
+
+    #result-area {
+        height: 350px;
+        border: 1px solid #8f8f8f;
+        background-color: #e8ebee;
+        overflow: auto;
     }
 </style>

@@ -47,7 +47,7 @@
             <vl-column width="5">
                 <vl-info-tile href="https://github.com/Informatievlaanderen/generic-hypermedia-api-client#readme"
                               title="Generieke Hypermedia API client"
-                              subtitle="Bovenstaande bouwblokken zijn beschikbaar in via package"
+                              subtitle="Bovenstaande bouwblokken zijn beschikbaar via deze package"
                               v-vl-equal-height>
                     <vl-badge slot="badge" icon="document-small" mod-medium mod-accent/>
                 </vl-info-tile>
