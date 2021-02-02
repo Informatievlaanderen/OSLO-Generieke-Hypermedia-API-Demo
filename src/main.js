@@ -29,6 +29,7 @@ import {
   VlTextarea,
   VlAlert
 } from'@govflanders/vl-ui-vue-components';
+import router from "./router/route";
 
 Vue.component('vl-grid', VlGrid);
 Vue.component('vl-region', VlRegion);
@@ -58,5 +59,6 @@ Vue.use(VlCore);
 Vue.use(VlUtil);
 
 new Vue({
+  router,
   render: h => h(App),
 }).$mount('#app')
