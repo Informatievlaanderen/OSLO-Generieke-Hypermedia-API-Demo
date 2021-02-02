@@ -2,7 +2,7 @@
     <vl-layout>
         <vl-title tag-name="h1">Bouwblokken</vl-title>
         <vl-grid mod-stacked v-vl-equal-height:container>
-            <vl-column>
+            <vl-column width="10">
                 <p>
                     Een implementatie van de Generieke Hypermedia API specificatie is vrij om te kiezen welke
                     bouwblokken relevant
