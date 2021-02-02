@@ -1,3 +1,3 @@
 module.exports = {
-    publicPath: '/tools/uri-validator'
+    publicPath: '/tools/hypermedia-validator'
 }

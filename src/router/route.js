@@ -10,7 +10,7 @@ Vue.use(Router);
  */
 const router = new Router({
     mode: 'history',
-    base: '/tools/uri-validator/',
+    base: '/tools/hypermedia-validator/',
     routes: [
         {
             path: '/',

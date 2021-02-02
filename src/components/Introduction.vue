@@ -12,8 +12,8 @@
         <vl-column width="4">
             <vl-side-navigation title="Op deze pagina">
                 <vl-side-navigation-list>
-                    <vl-side-navigation-item href="#item3" text="Bouwblokken"/>
-                    <vl-side-navigation-item href="#item4" text="Demo"/>
+                    <vl-side-navigation-item href="#specs" text="Bouwblokken"/>
+                    <vl-side-navigation-item href="#demo" text="Demo"/>
                 </vl-side-navigation-list>
             </vl-side-navigation>
         </vl-column>

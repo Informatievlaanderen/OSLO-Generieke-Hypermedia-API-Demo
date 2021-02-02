@@ -31,10 +31,10 @@
                 <Introduction/>
             </vl-layout>
         </vl-region>
-        <vl-region class="vl-region--alt">
+        <vl-region id="specs" class="vl-region--alt">
             <Specification/>
         </vl-region>
-        <vl-region>
+        <vl-region id="demo">
             <vl-layout>
                 <Demo/>
             </vl-layout>
