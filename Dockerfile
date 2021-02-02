@@ -23,4 +23,4 @@ FROM djoewie/oslo-simple-server:v0.3.0
 
 COPY --from=0 /app/dist /usr/src/app/dist
 #for testing purpose
-COPY --from=0 /app/dist /usr/src/app/dist/tools/hypermedia-validator
+#COPY --from=0 /app/dist /usr/src/app/dist/tools/hypermedia-validator
